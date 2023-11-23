@@ -26,6 +26,7 @@ public class SecurityConfigurations {
             .and().authorizeHttpRequests()
 //            permitindo request post no /login
             .requestMatchers(HttpMethod.POST, "/login").permitAll()
+            .requestMatchers("/v3/api-docs/**", "/swagger-ui.html", "/swagger-ui/**").permitAll()
 //            bloquear qualquer outra request
             .anyRequest().authenticated()
 //            colocando nosso filtro como prioridade
